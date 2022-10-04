@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/articlesFragment">
+
+    <fragment
+        android:id="@+id/articlesFragment"
+        android:name="com.spyro.myapplication.ui.articleslist.ArticlesScreenFragment"
+        android:label="fragment_articles"
+        tools:layout="@layout/fragment_articles_screen">
+        <action
+            android:id="@+id/actionToArticleDetailsScreen"
+            app:destination="@id/articleDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleDetailsFragment"
+        android:name="com.spyro.myapplication.ui.articledetails.ArticleDetailsScreenFragment"
+        android:label="fragment_article_details"
+        tools:layout="@layout/fragment_article_details_screen">
+        <argument
+            android:defaultValue="0L"
+            android:name="article_id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
